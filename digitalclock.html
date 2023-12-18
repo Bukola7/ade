@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="dt" onload="mytime"()></h1>
+    <script>
+        function mytime (){
+        
+            let hh = new Date().getHours();
+            let mm = new Date().getMinutes();
+            let ss = new Date().getSeconds();
+            let session="am";
+            if(hh==0){
+                hh = 12;
+                
+            }
+            session="pm"
+            if(hh>12){
+                hh = hh - 12;
+               
+            }
+
+            hh=(hh<10)? "0" +hh:hh;
+            mm=(mm<10)? "0" +mm:mm;
+            ss=(ss<10)? "0" +ss:ss;
+
+            let time = document.getElementById("dt");
+            time.innerHTML=`${hh }: ${mm} : ${ss} ${session} `;
+            
+        }
+        setInterval(mytime,1000);
+
+       
+        
+                 
+        
+    </script>
+</body>
+</html>

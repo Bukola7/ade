@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>customer Relational officer</h1>
+    <button onclick="tunji ()">APPLY</button> 
+    <script>
+         let oage = prompt('how old are you');
+        let beverage = (oage>18)? "beer" : "coke";
+         alert(beverage); 
+
+
+        function tunji(){
+            let oage = prompt("how old are you");
+            let userapply = (oage<25)? "you are too young":
+                                        "you are old enough"
+                alert(userapply + "" +" to apply for this job");
+        }   
+
+        let age = prompt("How old are you")
+        if(age >= 18 && age < 25)
+        {
+            alert("you are too young to apply");
+        }
+
+        else if(age>=25 && age <  50)
+        {
+            alert("you can apply for the job");
+        }
+        else if(age>=50 && age < 80){ 
+            alert("thank you for applying you are too old");
+        }
+        else{
+            alert("kindly be patient");
+        }
+
+           
+
+        
+    </script> 
+</body>
+</html>

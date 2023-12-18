@@ -1,0 +1,100 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+</head>
+<body>
+    <form id="registrationForm">
+        <div>
+          <label for="username">Username:</label>
+          <input  id="username" >
+          <span id="usernameError" class="error"></span>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input  id="email" >
+          <span id="emailError" class="error"></span>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input  id="password" >
+          <span id="passwordError" class="error"></span>
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input  id="confirmPassword">
+          <span id="confirmPasswordError" class="error"></span>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      
+      <style>
+      .error {
+        color: red;
+      }
+      </style>
+      
+      <script>
+      const form = document.getElementById("registrationForm");
+      const username = document.getElementById("username");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirmPassword");
+      const usernameError = document.getElementById("usernameError");
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const confirmPasswordError = document.getElementById("confirmPasswordError");
+      const emailformat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const passformat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{5,15}$/;
+      
+      form.addEventListener("submit", function(x) {
+        x.preventDefault();
+      
+        let isValid = true;
+      
+        if (!username.value) {
+          usernameError.textContent = "Username is required";
+          isValid = false;
+        } else {
+          usernameError.textContent = "input ok";
+          usernameError.style.color="blue"
+        }
+      
+        if (!email.value) {
+          emailError.textContent = "you must put the email";
+          isValid = false;
+        } else if (!email.value.match(emailformat)) {
+          emailError.textContent = "Email is not in the correct format";
+          isValid = false;
+        } else {
+          emailError.textContent = "";
+        }
+      
+        if (!password.value) {
+          passwordError.textContent = "please put a password";
+          isValid = false;
+        } else if (!password.value.match(passformat)) {
+          passwordError.textContent = "Password must contain one uppercase, one lowercase, one special character,  and must be between 5 and 15 characters long";
+          isValid = false;
+        } else {
+          passwordError.textContent = "";
+        }
+      
+        if (password.value !== confirmPassword.value) {
+          confirmPasswordError.textContent = "Passwords do not match";
+          isValid = false;
+        } else {
+          confirmPasswordError.textContent = "";
+        }
+      
+        if (isValid) {
+          form.submit();
+        }
+      });
+      
+      </script>
+</body>
+</html>

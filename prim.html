@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <label > input ONE</label>
+        <input onkeyup ="tur()" id = "ad"><br>
+        <label > input TWO</label>
+        <input onkeyup ="tur()" id = "de"><br>
+        <label > input THREE</label>
+        <input onkeyup ="tur()" id = "do"><br><br>
+       
+        <input id="total">
+
+        <script>
+
+    let y = document.querySelector('#ad').value;
+
+
+    let u =document.querySelector("#de").value;
+    let k =document.querySelector("#do").value;
+    
+        let y1=Number(y);
+        let u1=Number(u);
+        let k1=Number(k);
+                
+        let g = y1 + u1  +  k1;
+        let f = g/3;  
+   
+                
+      document.querySelector('#total').value=f;
+                
+                
+            let a=prompt("please enter a number");
+            for(i=2; i<100; i++){
+                if(a%i==1){
+                    alert("its a prime number");
+                    break;
+                }
+                else if(a%i==0){
+                    alert("its not a prime number");
+                    break;
+                }
+                else{
+                    "try again";
+                }
+            }
+
+
+                
+                
+
+              
+
+                    function solve(e,r, g, h,t){
+                        let z = e + r + g + h;
+                       let x =z/t;
+                        return x;
+                    }
+                    alert(solve(3,6,7,8,4));
+             
+        </script>
+    </body>
+</html>

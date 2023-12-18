@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body id ="page">
+        <input type="" id="loan">
+        <select id="symbol">
+            <option value="1"> 1month</option>
+            <option value="2"> 2month</option>
+            <option value="3"> 3month</option>
+            <option value="4"> 4month</option>
+            <option value="5"> 5month</option>
+            <option value="6"> 6month</option>
+            <option value="7"> 7month</option>
+            <option value="8"> 8month</option>
+            <option value="9"> 9month</option>
+            <option value="10"> 10month</option>
+        </select>
+
+        <button onclick="rate()"> TOTAL</button>
+        <h1 class="we"></h1>
+        
+        <script>
+            let t=prompt("what is your name");
+            let greetings= "WELCOME TO lOAN BANK WE ARE GLAD TO HAVE YOU."+ " "+t;
+            alert(greetings);
+            let age =prompt("how old are you");
+            let r=(age<=18)? "SORRY YOU CAN NOT LOAN" : "YOU CAN  LOAN";
+            alert(r);
+
+           function rate(){
+            let a=document.getElementById("loan").value;
+            let b=document.getElementById("symbol").value;
+            let c =a*0.3;
+            let d =b*c;
+            let loan =Number(d)+Number(a);
+            if(a==""){
+            document.querySelector("#page").style.backgroundColor="red";
+            document.querySelector("#page").textContent="it cant be empty";
+            document.querySelector("#page").style.color="white";
+            
+            
+            }
+            else if(isNaN(a)){
+                alert("its must be a number");
+            }
+            else{
+            document.querySelector(".we").textContent= "the  amount is" + " " + loan ; 
+           }
+        }
+           
+        </script>
+    </body>
+</html>

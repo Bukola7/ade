@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: bisque;
+    }
+    .put{
+        margin-left: 4rem; 
+    }
+    #sam{
+        width: 30%;
+    }
+    #tolu{
+        width:30%;
+    }
+    
+</style>
+<body>
+    <p class="put"> 
+    <input  id ="sam">
+    <span id ="symbol"></span>
+    <input id="tolu"> 
+    <span id ="answer"></span><br><br>
+    <button onclick="addition()">+</button>
+    <button onclick="subraction()">-</button>
+    <button onclick ="division()">/</button>
+    <button onclick="mutiplication()">*</button>
+    </p>   
+
+    <script>
+         
+        
+        
+        function addition(){
+            let input1 = document.getElementById("sam").value;
+            let input2 = document.getElementById("tolu").value;
+            let span1 = document.getElementById("symbol");
+            let span2 = document.getElementById("answer");
+            let myinput1 = Number(input1);
+            let myinput2 = Number(input2);
+                
+                if (input1== "" || input2=="")
+            {
+                alert("its can not be empty");
+            }
+            else if (isNaN(input1) || isNaN(input2))
+            {
+                alert("its must be a number");
+            }
+            else {
+                span1.innerHTML="+"; 
+                let z = myinput1 + myinput2
+                span2 .innerHTML="=" + " " + z;
+            
+            }
+            
+                
+        }
+
+        function subraction(){
+        let input1 = document.getElementById("sam").value;
+        let input2 = document.getElementById("tolu").value;
+        let span1 = document.getElementById("symbol");
+        let span2 = document.getElementById("answer");
+        let b=Number(input1);
+        let g=Number(input2);
+            
+            if (input1== "" || input2=="")
+        {
+            alert("its can not be empty");
+        }
+        else if (isNaN(input1) || isNaN(input2))
+        {
+            alert("its must be a number");
+        }
+        else {
+            span1.innerHTML="-"; 
+            let j=b-g;
+            span2 .innerHTML="=" + " " + j;
+           
+        }
+        
+            
+        }
+
+
+        function division(){
+        let input1 = document.getElementById("sam").value;
+        let input2 = document.getElementById("tolu").value;
+        let span1 = document.getElementById("symbol");
+        let span2 = document.getElementById("answer");
+        
+            
+            if (input1== "" || input2=="")
+        {
+            alert("its can not be empty");
+        }
+        else if (isNaN(input1) || isNaN(input2))
+        {
+            alert("its must be a number");
+         }
+        else {
+            span1.innerHTML="/"; 
+            
+            span2 .innerHTML="=" + " " + input1 / input2;
+           
+        }
+        
+            
+        }
+
+        function mutiplication(){
+        let input1 = document.getElementById("sam").value;
+        let input2 = document.getElementById("tolu").value;
+        let span1 = document.getElementById("symbol");
+        let span2 = document.getElementById("answer");
+        
+            
+            if (input1== "" || input2=="")
+        {
+            alert("its can not be empty");
+        }
+        else if (isNaN(input1) || isNaN(input2))
+        {
+            alert("its must be a number");
+        }
+        else {
+            span1.innerHTML="*"; 
+            
+            span2 .innerHTML="=" + " " + input1 * input2;
+           
+        }
+        
+            
+        }
+        
+       
+    </script>
+</body>
+ </html>

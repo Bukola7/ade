@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .counter {
+            background: #e70e32;
+            color: aliceblue;
+            padding: 15px;
+            width: 300px;
+            font-size: 40px;
+            text-align: center
+        }
+
+
+        #pause,
+        #stop,
+        #cont,
+        #reset {
+            display: none
+        }
+
+        #pause,
+        #stop,
+        #cont,
+        #reset,
+        #start {
+            color: aliceblue;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px
+        }
+
+        #pause,
+        #stop,
+        #cont {
+            width: 100px;
+            margin-left: 50px;
+        }
+
+        #start,
+        #reset {
+            width: 200px;
+            margin-left: 50px;
+        }
+    </style>
+
+    </head>
+
+    <body id='pagebody' style="background:black; color: white">
+
+
+        <h1 class="counter">
+            <span id="min">00</span>
+            <span id="colm">:</span>
+            <span id="sec">00</span>
+        </h1>
+        <h1 id="expired"></h1>
+
+        <button id="start" style="background:green;">start</button>
+        <button id="pause" style="background:orange">pause</button>
+        <button id="cont" style="background:green">continue</button>
+        <button id="stop" style="background:red">stop</button>
+        <button id="reset" style="background:red">Reset</button>
+
+        <script>
+            //declaring variable
+            let startbtn = document.getElementById('start');
+            let pausebtn = document.getElementById('pause');
+            let contbtn = document.getElementById('cont');
+            let stopbtn = document.getElementById('stop');
+            let resetbtn = document.getElementById('reset');
+            let min = document.getElementById('min');
+            let sec = document.getElementById('sec');
+            let expmsg = document.getElementById('expired');
+            let efg = 0;
+            let k;
+
+            function myengine() {
+                ++efg;
+                
+                let mm = parseInt(efg / 60);
+                let ss = efg % 60;
+
+                mm = (mm < 10) ? '0' + mm : mm;
+                ss = (ss < 10) ? '0' + ss : ss;
+
+                if (ss == 10) {
+                    stopcount();
+                    expmsg.innerHTML = "Time expired, counter stops";   
+
+                }
+
+                min.innerHTML = mm;
+                sec.innerHTML = ss;
+
+            }
+
+            function count() {
+                k = setInterval(myengine, 1000);
+            }
+
+            function startcount() {
+                count();
+                startbtn.style.display = 'none';
+                pausebtn.style.display = 'inline-block';
+                stopbtn.style.display = 'inline-block';
+            }
+
+            function pausecount() {
+                clearInterval(k);
+                pausebtn.style.display = 'none';
+                contbtn.style.display = 'inline-block';
+            }
+
+            function cont() {
+                count();
+                pausebtn.style.display = 'inline';
+                contbtn.style.display = 'none';
+            }
+
+            function stopcount() {
+                clearInterval(k);
+                pausebtn.style.display = 'none';
+                contbtn.style.display = 'none';
+                stopbtn.style.display = 'none';
+                resetbtn.style.display = 'inline-block';
+
+            }
+
+            function resetcount() {
+                efg = 0;
+                min.innerHTML = '0' + 0;
+                sec.innerHTML = '0' + 0;
+                resetbtn.style.display = 'none';
+                startbtn.style.display = 'inline-block';
+                startbtn.innerHTML = 'START AGAIN';
+                expmsg.innerHTML = " ";
+
+
+            }
+
+            startbtn.addEventListener('click', startcount);
+            pausebtn.addEventListener('click', pausecount);
+            contbtn.addEventListener('click', cont);
+            stopbtn.addEventListener('click', stopcount);
+            resetbtn.addEventListener('click', resetcount);
+
+
+        </script>
+    </body>
+
+</html>

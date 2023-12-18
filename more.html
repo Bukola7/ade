@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+           <div id="sunny">
+
+           </div>
+           <button onclick="fam()">create this</button>
+    </body>
+    <script>
+        // function fam (){
+        //     let olu = document.createElement('h1');
+        //     olu.innerHTML="this is an element";
+        //     document .getElementById("sunny").appendChild(olu);
+        //     olu.style.color = "red"
+        //     olu.style.textAlign="center"
+
+        // }
+        // text node
+
+        function fam (){
+            let olu = document.createElement('h1');
+            let ade = document.createTextNode('This is a paragraph');
+            olu.appendChild(ade);
+            document .getElementById("sunny").appendChild(olu);
+           
+        }
+          
+    </script>
+</html> 

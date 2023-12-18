@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="numb" placeholder="age" onkeyup ="mailValidation()"><br>
+
+    <span id="number"></span>
+
+    
+    <script>
+        function mailValidation(){
+            let x; 
+            let text;
+            x = document.getElementById("numb").value;
+            if(isNaN(x)||!x||x<18||x>80){
+                text="you can't contest for president"
+            }
+            else {
+                text ="input ok"
+            }
+           return document.getElementById("number").innerHTML=text;
+        //    return document.getElementById("#number").style.color="red";
+        }
+        
+        
+    </script>
+
+</body>
+</html>

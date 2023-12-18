@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const tunji = {
+       firstName: 'Tunji',
+       lastName: 'olagboye',
+       birthyear:1992,
+       job: 'teacher',
+       hobbies: ['reading', 'dancing', 'travelling'],
+       hasaDrivenlicence: false,
+       calcAge: function(){
+        return 2023 - this.birthyear
+       },
+
+       summary:function(){
+          return `${this.firstName} ${this.lastName} is a ${this.calcAge()}-years old teacher, 
+          and he has ${this.hasaDrivenlicence? 'a':'no'} driver license`;
+       }
+      }
+
+      alert(tunji.summary())
+    </script>
+</body>
+</html>

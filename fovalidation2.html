@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form2" name = "myForm" 
+    onSubmit = "return validate()" >
+
+      <table cellspacing = "2" cellpadding = "2" 
+      border = "1">
+  
+         <tr>
+            <td align = "right">Name</td>
+            <td><input type = "text"  name = "Name" /></td>
+         </tr>
+  
+         <tr>
+          <td align = "right">Your Age</td>
+          <td><input type = "text" name = "Numb" /></td>
+         </tr>
+         
+         <tr>
+            <td align = "right">EMail</td>
+            <td><input type = "text" name = "EMail" /></td>
+         </tr>
+         
+         <tr>
+            <td align = "right">Zip Code</td>
+            <td><input type = "text" name = "Zip" /></td>
+         </tr>
+  
+         <tr>
+            <td align = "right">Country</td>
+            <td>
+               <select name = "Country">
+                  <option value = "-1" selected>[choose yours]</option>
+                  <option value = "1">USA</option>
+                  <option value = "2">UK</option>
+                  <option value = "3">NIGERIA</option>
+               </select>
+            </td>
+         </tr>
+         
+         <tr>
+            <td align = "right"></td>
+            <td><input type = "submit" value = "Submit" /></td>
+         </tr>
+         
+      </table>
+   </form>
+    <script>
+        
+        //form validation script
+const example = /^[0-9]+$/; 
+const myname = /^[a-zA-Z]+$/;
+const myemail =/^\w+@[a-z]+\.[a-z]{2,3}$/;
+
+ function validate() {
+        
+    if(!document.myForm.Name.value.match(myname) ) {
+       alert( "Please provide your name!" );
+       document.myForm.Name.focus() ;
+       return false;
+    }
+
+    if( !document.myForm.Numb.value.match(example) ) {
+       alert( "input must be digit only" );
+       document.myForm.Numb.focus() ;
+       return false;
+    }
+    if( !document.myForm.EMail.value.match(myemail) ) {
+       alert( "Please provide a valid Email!" );
+       document.myForm.EMail.focus() ;
+       return false;
+    }
+    if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) || document.myForm.Zip.value.length != 5 ) {    
+       alert( "Please provide a zip code; it must be 5 digit" );
+       document.myForm.Zip.focus() ;
+       return false;
+    }
+
+    if( document.myForm.Country.value == "-1" ) {
+       alert( "Please provide your country!" );
+       return false;
+    }
+    
+    else{
+    return true;
+ }
+ }
+    </script>
+      
+    </form>
+</body>
+</html>

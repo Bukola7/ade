@@ -1,0 +1,55 @@
+<bdg!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number"id="loan">
+    <select  id="symbol">
+        <option value="1">1month</option>
+        <option value="2">2month</option>
+        <option value="3">3month</option>
+        <option value="4">4month</option>
+        <option value="5">5month</option>
+        <option value="6">6month</option>
+        <option value="7">7month</option>
+    </select>
+    <button onclick="rate()">TOTAL</button>  
+    <h1 class="we"></h1>
+    
+    
+       
+        <script>
+            function rate(){
+            let a= document.getElementById("loan").value;
+            let b =document.getElementById("symbol").value;
+            let c =a * 0.3;
+            let d = c*b;
+            let loan = Number(d) + Number(a);
+            
+        if(a=="")
+        {
+            alert("its can't be empty");
+
+        }
+        else if(isNaN(a))
+        {
+            alert("it must be a number");
+        }
+
+        else{
+           
+           
+            document.querySelector('.we').textContent = "THE TOTAL AMOUNT IS" + " " +loan;
+             
+    } 
+        }
+        
+       </script> 
+</body>
+
+</html>

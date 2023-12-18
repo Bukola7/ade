@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="output">X</span>
+     </div>
+     
+    <script>
+   function myFunction(i) {
+  (function doStuff() {
+    console.log(i);
+    document.getElementById('output').innerHTML = i;
+    i -= 1;
+
+    if (i >= 0) {
+      setTimeout(doStuff, 5000);
+    }
+  }());
+}
+
+myFunction(3);
+
+    </script>
+</body>
+</html>

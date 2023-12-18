@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <label for="name">name</label>
+    <input type="text" id="name">
+    <label for="days">days</label>
+    <input onkeyup="total()" id="days">
+    <input id="all">
+    <h1 id="down"></h1>
+
+</body>
+<script>
+
+    let days = Number(document.getElementById("days").value);
+    function total() {
+        let name = document.getElementById("name").value;
+        days;
+
+        let d = 25000;
+        let x = days * d;
+        document.getElementById("all").value = x;
+
+    }
+    let countdown = (new Date().getTime() + (days * (24 * 60 * 60 * 1000)));
+    function mycountdown() {
+        let now = new Date().getTime();
+        let distance = countdown - now;
+        let days = Math.floor(distance / (24 * 60 * 60 * 1000));
+        let hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        let minute = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
+        let seconds = Math.floor((distance % (60 * 1000)) / (1000));
+        document.getElementById("down").innerHTML = `${days}D ${hours}H ${minute}M ${seconds}S`;
+        let x = setInterval(mycountdown, 1000);
+        if (distance = 0) {
+            clearInterval(x);
+            document.getElementById("down").innerHTML = "it is time to go to the hotel";
+        }
+
+    }
+    mycountdown();
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="amount"> amount of 200 naira</label>
+    <input type="number" id="two"><br>
+    <label for="amount1"> amount of 500 naira</label>
+    <input type="number" id="five"><br>
+    <label for="amount2"> amount of 1000 naira</label>
+    <input type="number" id="one"><br>
+    <label for="total"> total</label>
+    <input type="number" id="total"><br>
+    <button onclick="rate()">TOTAL</button> 
+    <h1 id="go"></h1>
+   
+    
+
+    <script>
+        function rate(){
+        let input1 =document.getElementById("two").value;
+        let input2 = document.getElementById("five").value;
+        let input3 = document.getElementById("one").value;
+        
+        let myinput1 = Number(input1);
+        let myinput2 = Number(input2);
+        let myinput3 = Number(input3);
+       
+        let total = myinput1 + myinput2 + myinput3; 
+        // if(total<5000){
+        //     let total = myinput1 + myinput2 + myinput3; 
+        //     document.querySelector("#go").innerHTML="please kindly go to your bank to save";
+        //     document.querySelector("#go").style.color= "red";
+        // }
+        // else if(total>5000){
+        //     let total = myinput1 + myinput2 + myinput3; 
+        //     document.querySelector("#go").innerHTML="you can kindly bring your money to CBN";
+        //     document.querySelector("#go").style.color="blue";
+        // }
+        //     else{
+           document.querySelector("#go").innerHTML= total;
+        
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        LOAN CALCULATOR CODE
+        <div class="col-lg">
+            <div class="form-control-sm p-2 float-lg-start">
+                <h5 class="fw-semibold">LOAN CALCULATOR</h5>
+                <br />
+                <label>HOW MUCH DO YOU WANT TO BORROW</label><br />
+                <input class="form-control-sm" id="atr" type="" placeholder="Loan Amount" /><br /><br />
+                <label>INTEREST RATE in %age</label><br />
+                <input class="form-control-sm" id="ctr" type="" placeholder="Interest" /><br /><br />
+                <label>LOAN DURATION PER YEAR</label><br />
+                <input class="form-control-sm" id="bdt" type="" placeholder="Duration" />
+                <br /><br />
+                <label for="">REPAYMENT METHOD</label><br />
+                <select id="dtr">
+                    <option value="1" selected>annual</option>
+                    <option value="12">monthly</option>
+                </select>
+                <br /><br />
+                <button onclick=" per()">CALCULATE</button>
+                <p id="axe"></p>
+            </div>
+        </div>
+        
+        <script>
+             // LOAN CALCULATOR 
+             function per() {
+                    let a = Number(document.getElementById("atr").value);
+                    let b = Number(document.getElementById("bdt").value);
+                    let c = Number(document.getElementById("ctr").value);
+                    let d = Number(document.getElementById("dtr").value);
+        
+                    if (d == 12) {
+                        let d = Number(document.getElementById("dtr").value);
+                        let interest = a / c;
+                        let years = interest * b;
+                        let total = a + years;
+                        let u = b * 12
+                        let e = total / 12
+                        let f = Math.round(e)
+                        let z = f / b
+                        document.getElementById("axe").innerHTML = "You will be paying" + " "   + z + 
+                        " " + "monthly for" + " " + u + " " + "month(s)"
+                    }
+                    else if (d == 1) {
+                        let d = Number(document.getElementById("dtr").value);
+                        let interest = a / c;
+                        let years = interest * b;
+                        let total = a + years;
+                        let r = total / b
+                        let h = Math.round(r)
+                        document.getElementById("axe").innerHTML = "You will be paying" + " "  + r +
+                         " " + "yearly for" + " " + b + " " + "year(s)";
+                    }
+                    else {
+                        "Invalid Input"
+                    }
+                }
+                // LOAN CALCULATOR END 
+        </script>
+        
+
+    </body>
+</html>

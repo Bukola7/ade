@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+       
+
+        // let d=prompt("enter your day");
+        let j = new Date().getDay();
+        if(j==0){
+            alert("its sunday let go to church");
+        }
+        else if(j<4){
+        let days =["sunday", "monday", "tuesday", "wednesday", "thursday","friday", "saturday" ];
+        let d= days[j];
+        alert (`To day is ${d}, get up and go to work`)
+        }
+        else if (j==5){
+            alert("its friday thank God");
+        }
+        else if(j==6){
+            alert("saturdays are for owanbe")
+        } 
+        else{
+            alert("try again");
+        }
+    </script>
+
+</body>
+</html>

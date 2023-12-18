@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            span{
+                margin-left:1300px;
+                margin-top: -40%;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div style="background: red; padding: 16px;">
+        <span onclick="this.parentNode.style.display ='none'">&times; </span>
+        <p>aouncement you can vote</p>
+        </div>
+        
+
+        <script>
+            let p =document.getElementById("pa");
+            p.addEventListener('click',  function(){
+                console.log(this.parentNode)
+            })
+      
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id ='ade'>
+            <li>
+                coffee
+            </li>
+            <li>
+                milk
+            </li>
+            <li>
+                tea
+            </li>
+
+        </ul>
+        <button onclick="para()">create</button>
+    </body>
+    <script>
+        function para(){
+            let newitem =document.createElement('li');
+            let textnode = document.createTextNode('fish')
+            newitem.appendChild(textnode);
+           let list =document.getElementById('ade');
+           list.insertBefore(newitem, list.childNodes[3]);
+        }
+    </script>
+</html>

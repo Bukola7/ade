@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    EXAMPLE OF TO DO/ ADD AND DELETE APP
+    <div id="olu" >
+          <h1 style="margin:5px">Add subject</h1>
+        
+          <input type="text" id="tola" placeholder="subjects..." style=" padding:3px 5px; font-size:24px">
+        
+          <button style="cursor:pointer; padding:3px 5px; background:red; font-size:24px" id="addsub">+ add</button>
+        
+        </div>
+        
+        <ol id="subject" style="font-size:36px">
+        
+        </ol>
+        
+        <script>
+        function addnew(){
+          let a =document.getElementById('olu');
+          let b =document.getElementById('tola').value;
+          let c =document.getElementById('subject');
+        
+        
+          let d = document.createElement('li');
+          let e = document.createTextNode(b);
+          d.appendChild(e);
+          c.appendChild(d);
+          document.getElementById('tola').value='';
+        
+    
+    
+         let r = document.createElement('span');
+         let s = document.createTextNode('\u2714');
+         r.appendChild(s);
+         r.title="mark done";
+         r.style.backgroundColor="green";
+         r.style.color="white";
+         r.style.cursor="pointer";
+         r.className='done';
+    
+         d.appendChild(r);
+    
+        let q = document.getElementsByClassName('done');
+        let z;
+        for(z=0; z<q.length; z++){
+          q[z].onclick= function(){
+          this.parentNode.style.textDecoration="line-through";
+          }
+    
+        }
+    
+    
+        let x = document.createElement('span');
+        let y = document.createTextNode('\u00d7');
+        x.appendChild(y);
+        x.style.backgroundColor="red";
+        x.style.color="white";
+        x.style.cursor="pointer";
+        x.className='close';
+        
+        d.appendChild(x);
+        
+        let f = document.getElementsByClassName('close');
+        let i;
+        for(i=0; i<f.length; i++){
+          f[i].onclick= function(){
+          this.parentNode.style.display="none";
+        }
+        
+        }
+    
+    
+          }
+        
+             
+          const mary= function(){ 
+          if(!document.getElementById('tola').value==''){
+              addnew();
+              }
+             };
+    
+          
+          let addbtn= document.getElementById('addsub');
+          addbtn.addEventListener('click', mary)
+    
+    
+          const molade= function(e){ 
+          if(e.key==="Enter" && !document.getElementById('tola').value==''){
+              addnew();
+              }
+             };
+             
+          document.addEventListener('keydown', molade );
+    
+    </script>  
+</body>
+</html>

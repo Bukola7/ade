@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert(tunji(7,8))">The answer is</button>
+
+    <script>
+        function tunji(x,y){
+            let z = x + y;
+            return z;  
+        }
+        function checkAge(age){
+            if(age>=18){
+                return true;
+            }
+            else{
+                return confirm("Do you have your parent permission");
+            }
+        }
+        let age = prompt("how old are you");  
+        if(checkAge(age)){
+            alert("access granted");
+
+        }
+        else{
+            alert("access denied");
+        }
+
+        function fruitProcessor(apples,orange){
+            const juice =`
+            ${apples} apples ${orange}orange`;
+            return juice;
+        }
+        const appleJuice = fruitProcessor(3,4);
+            console.log(appleJuice);
+        const orangeJuice = fruitProcessor(0,8);
+            console.log(orangeJuice);
+       
+             
+       
+        
+    </script>
+</body>
+</html>

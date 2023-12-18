@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="election"></h1>
+        <h2 onload="bola()" id="rel"></h2>
+
+    <script>
+        let old=new Date("june,31 2023, 10:00:00").getTime();
+        function engine(){
+            let news=new Date().getTime();
+            let distance= old-news;
+            let days=Math.floor(distance/(24*60*60*1000));
+            let hours=Math.floor((distance%(24*60*60*1000)) / (60*60*1000));
+            let min=Math.floor((distance%(60*60*1000))/(60*1000));
+            let sec=Math.floor((distance%(60*1000))/(1000))
+            document.getElementById("election").innerHTML= `${days} D ${hours} H ${min} M ${sec} S`
+            let t = setInterval(engine,1000);
+            if(distance=0){
+                clearInterval(x);
+                document.getElementById("election").innerHTML="the last day of the month";
+            }
+            
+        }
+        engine();
+
+        function bola(){
+
+        let hh = new Date().getHours();
+        let min = new Date().getMinutes();
+        let sec= new Date().getSeconds();
+
+        let se="am";
+        if(hh==0){
+        hh=12;
+    }
+
+        if(hh>12){
+            hh=hh-12;
+            se="pm";
+        }
+
+       
+        hh=(hh<10)? "0" +hh:hh;
+        min=(min<10)? "0" +min:min;
+        sec=(sec<10)? "0" +sec:sec;
+
+       let k= document.getElementById("rel");
+       k.innerHTML=`${hh}: ${min} ${sec} ${se}`;
+      
+        
+
+    }
+    setInterval(bola, 1000);
+   
+
+    </script>
+</body>
+</html>

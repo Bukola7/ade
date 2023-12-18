@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background: orangered;
+            }
+            #group{
+                margin-left: 500px;
+                margin-top: 29px;
+                color: white;
+            }
+            #going{
+                width: 300px;
+                height: 30px;
+            }
+            #pick{
+                width: 300px;
+                height: 30px;
+            }
+            #tab{
+                border-color: azure;
+            }
+            #stop,#reset,#tab,#mini{
+                display: none;
+            }
+            @media screen and (max-width:768px) {
+                body{
+                    background: yellow
+                }
+               #group{
+                margin: 0px;
+            
+               }
+               
+               
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id="group">
+        <h1 id="lab">
+            <label for="">PICK UP POINT</label>
+            <input id="pick" required=""><br>
+            <label for=""> DESTINATION</label>
+            <input id="going" required="">
+        </h1>
+
+        <div id="mini">
+            <span id="min">00</span>
+            <span id="col">:</span>
+            <span id="sec">00</span><br><br>
+        </div>
+
+        <button id="start"> START TRIP</button><br><br>
+        <button id="stop">STOP TRIP</button><br><br>
+        <button id="reset"> RESET TRIP</button><br><br>
+
+        <table cellpadding="10" border="5"  id="tab">
+            <tr>
+                <td>PICK UP POINT</td>
+                <td id="pick" width="100px"></td>
+            </tr>
+            <tr>
+                <td>DESTINATION</td>
+                <td id="desti" width="100px"></td>
+            </tr>
+            <tr>
+                <td>MINUTE USED</td>
+                <td id="min" width="100px"></td>
+            </tr>
+                      
+            <tr>
+                <td>BASE FARE</td>
+                <td id="base" width="100px"> 500</td>
+            </tr>
+            <tr>
+                <td>AMOUNT PER SECOND</td>
+                <td id="pic" width="100px">15</td>
+            </tr>
+            <tr>
+                <td>TOTAL AMOUNT</td>
+                <td id="pic" width="100px"></td>
+            </tr>
+                      
+                      
+                      
+
+        </table>
+        </div>
+
+        <script>
+            let startbtn = document.getElementById("start");
+            let stopbtn = document.getElementById("stop");
+            let resetbtn = document.getElementById("reset");
+            let min = document.getElementById("min");
+            let sec = document.getElementById("sec");
+            let mini =document.getElementById("mini")
+            let w = document.getElementById("pick").value;
+            let s = document.getElementById("going").value
+            let a =0;
+            let k;
+            function bolti(){
+                ++a
+               let mm = parseInt(a/60);
+               let ss =  a%60;
+
+                mm=(mm<10)? '0'+ mm: mm;
+                ss =(ss<10)? '0' +ss: ss;
+
+                min.innerHTML=mm;
+                sec.innerHTML=ss;
+            }
+
+            function count(){
+                k = setInterval(bolti, 1000);
+            }
+            function startcount(){
+                count()
+                startbtn.style.display = 'none';
+                resetbtn.style.display ='inline-block';
+                stopbtn.style.display = 'inline-block';
+                mini.style.display='inline-block';
+            }
+            startbtn.addEventListener('click', startcount);
+
+        </script>
+    </body>
+</html>

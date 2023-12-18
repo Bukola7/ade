@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #counter {
+            display: none;
+        }
+
+        #stop {
+            display: none;
+        }
+    </style>
+</head>
+
+<body id="page">
+    <span id="counter">
+        <h1 class="message"></h1>
+        <input type="number" class="number"><br>
+        <button id="check">check</button>
+    </span>
+
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+
+    <h1 id="hide">
+        <span id="min">00</span>
+        <span id="col">:</span>
+        <span id="sec">00</span>
+    </h1>
+
+    <h1 id="epire"></h1>
+
+    <script>
+        const stopbtn = document.getElementById("stop");
+        const startbtn = document.getElementById("start");
+        const counterbtn = document.getElementById("counter");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+        let efg = 0;
+        let k;
+       
+        const page = document.querySelector("#page");
+        const message = document.querySelector(".message");
+        const secretNumber = Math.trunc(Math.random() * 20) + 1;
+        document.querySelector("#check").addEventListener("click", function () {
+            // for(check=1; check<=5; check--){
+            //     if(check==5){
+            //         alert("cant continue");
+            //         break;
+            //     }
+            // }
+            const guess = Number(document.querySelector(".number").value);
+            if (!guess || isNaN(guess) || guess > 20) {
+                message.textContent = "its can not be empty must be between 1 and 20";
+                message.style.color = "red";
+            }
+            else if (guess == secretNumber) {
+                message.textContent = "wao you are right";
+                message.style.color = "blue";
+                page.style.backgroundColor = "green";
+            }
+            else if (guess < secretNumber) {
+                message.textContent = "guess is low";
+            }
+            else if (guess > secretNumber) {
+                message.textContent = "guess is too high";
+            }
+          
+            else {
+                message.innerHTML = "error";
+            }
+        })
+
+        function myegngine() {
+            ++efg;
+
+            let mm = parseInt(efg / 60);
+            let ss = efg % 60;
+
+            mm = (mm < 10) ? '0' + mm : mm;
+            ss = (ss < 10) ? '0' + ss : ss;
+            
+
+            min.innerHTML = mm;
+            sec.innerHTML = ss;
+
+        }
+
+        function count() {
+            k = setInterval(myegngine, 1000);
+        }
+
+        function startcount() {
+            count()
+            startbtn.style.display = "none";
+            stopbtn.style.display = "inline-block";
+            counterbtn.style.display = "inline-block";
+
+        }
+        function stopcount() {
+            clearInterval(k);
+            stopbtn.style.display = "none";
+            startbtn.style.display = "inline-block";
+        }
+
+        startbtn.addEventListener("click", startcount);
+        stopbtn.addEventListener("click", stopcount);
+
+
+    </script>
+</body>
+
+</html>

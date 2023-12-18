@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body id='page'>
+  <div style="width:500px; margin:0px auto; padding: 20px">
+    <h1> GUES MY NUMBER GAME </h1>
+
+    <h3 class='message'> </h3>
+
+    <input class='mynumber' placeholder='gues a nuimber btw 1 and 20'>
+
+    <h1 class='number' style='width:350px;'> The number is ??</h1>
+
+    <button class='check'>check</button>
+    <script>
+      const secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+      document.querySelector('.check').addEventListener('click', function () {
+        const gues = Number(document.querySelector('.mynumber').value);
+
+        if (!gues || isNaN(gues) || gues > 20) {
+          document.querySelector('.message').textContent = "make sure to enter a valid number btw 1 and 20 only";
+          document.querySelector('.message').style.color = "red"
+
+        } else if (gues === secretNumber) {
+          document.querySelector('.message').textContent = "yeah, you are correct";
+          document.querySelector('#page').style.backgroundColor = "green"
+          document.querySelector('.number').textContent = `The number is  ${secretNumber}`;
+          document.querySelector('.message').style.color = "white"
+
+        } else if (gues < secretNumber) {
+          document.querySelector('.message').textContent = "your gues is too low";
+          document.querySelector('.message').style.color = "blue"
+        } else if (gues > secretNumber) {
+          document.querySelector('.message').textContent = "your gues is too high";
+          document.querySelector('.message').style.color = "tomato"
+        } else {
+          document.querySelector('.message').textContent = 'you are wrong';
+          document.querySelector('.message').style.color = "red"
+        }
+      });
+    </script>
+  </div>
+</body>
+
+</html>

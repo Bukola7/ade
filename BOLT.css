@@ -1,0 +1,43 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+        #counter,#stop,#reset,#niyi{display: none;}
+body{
+    background: rgb(8, 8, 49);
+    color: white;
+}
+#counter{
+    border-radius: 40px;
+    background-color: blue;
+    width: 250px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    margin-left: 40px;
+}
+#start{
+    width: 150px;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+    background: yellowgreen;
+    border-radius: 10px;
+}
+#stop{
+    width: 150px;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+    background: rgb(91, 91, 199);
+    border-radius: 10px; 
+}
+#reset{
+    width: 150px;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+    background: rgb(91, 91, 199);
+    border-radius: 10px; 
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>
+        <span id="min">00</span>
+        <span id="colm">:</span>
+        <span id="sec">00 </span>
+         
+       
+     </h1>
+     <button id="start" onclick="start()">start</button>
+     <button id="clear" onclick="clear()">clear</button>
+     <script>
+        
+        let a=0;
+        let ago = document.getElementById("min");
+        let cago=document.getElementById("sec");
+        
+
+        function myengine(){
+            ++a;
+            let mm=parseInt(a/60);
+            let ss=a%60;
+            ago.innerHTML=mm;
+            cago.innerHTML=ss;
+            
+           
+        }
+        function start(){
+            setInterval(myengine, 1000);
+        }
+        function clear(){
+            clearInterval(start);
+        }
+     </script>
+</body>
+</html>

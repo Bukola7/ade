@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Enter any prime number from 2 to 100");
+if (n <= 1 || n > 100 || isNaN(n) || n=="")
+alert("Invalid input");
+else if (n == 2)
+alert("The number is a prime number");
+ 
+else {
+for (i = 2; i < n; i++) {
+if(n%i==0){
+alert("The number is not a prime number");
+break;
+}
+}
+if(i == n ){
+  alert("correct");
+}
+
+}
+    </script>
+</body>
+</html>
